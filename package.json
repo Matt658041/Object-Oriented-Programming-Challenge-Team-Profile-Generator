@@ -1,0 +1,25 @@
+{
+  "name": "object-oriented-programming-challenge-team-profile-generator",
+  "version": "1.0.0",
+  "description": "Homework for Module 10",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matt658041/Object-Oriented-Programming-Challenge-Team-Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matt658041/Object-Oriented-Programming-Challenge-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Matt658041/Object-Oriented-Programming-Challenge-Team-Profile-Generator#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
