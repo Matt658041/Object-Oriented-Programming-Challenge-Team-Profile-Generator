@@ -1,28 +1,63 @@
-const fs = require('fs');
-const profileDataArgs = process.argv.slice(2);
-const [name, github] = profileDataArgs;
+const inquirer = require(`inquirer`);
+const generatePage = require('./src/page-template');
+const {writeFile, copyFile } = require('./utils/generate-site');
+const promptUser =() => {
 
-const generatePage = (name, github) => {
-  return `
-  <!DOCTYPE html> 
-  <html lang="en"> 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Demo</title>
-  </head>
-
-  <body>
-    <h1>${name}</h1>
-    <h2><a href="https://github.com/${github}">Github</a></h2>
-  </body>
-  </html>
-  `;
+return inquirer.prompt ([
+    {
+        type:`input`,
+        name: `name`,
+        message:`What is your name?`,
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please enter your name!');
+                return false;
+            }
+        }
+    },
+    {
+        type:`input`,
+        name: `occpuation`,
+        message:`What is your occupation?`
+    },
+    {
+        type:`checkbox`,
+        name: `title`,
+        message:`What is your title?`,
+        choices: [ `This`, `That`, `More`]
+    },
+    {
+        type:`input`,
+        name: `name`,
+        message:`Provide some information about yourself?`,
+        when: ({confirmAbout}) =>  {
+            if (confirmAbout) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    
+]);
 };
-
-fs.writeFile('./index.html', generatePage(name, github), err => {
-  if (err) throw new Error(err);
-
-  console.log('Portfolio complete! Check out index.html to see the output!');
-});
+promptUser()
+  .then(promptProject)
+  .then(portfolioData => {
+    return generatePage(portfolioData);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .then(writeFileResponse => {
+    console.log(writeFileResponse);
+    return copyFile();
+  })
+  .then(copyFileResponse => {
+    console.log(copyFileResponse);
+  })
+  .catch(err => {
+    console.log(err);
+  });
