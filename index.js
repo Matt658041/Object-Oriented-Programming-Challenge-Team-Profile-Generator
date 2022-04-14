@@ -1,6 +1,6 @@
 const fs = require(`fs`)
 const inquirer = require(`inquirer`);
-const generatePage = require('./lib/Employee');
+const generatePage = require('./utils/generate-site');
 const {writeFile, copyFile } = require('./utils/generate-site');
 const promptUser =() => {
 
