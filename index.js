@@ -1,4 +1,4 @@
-
+const fs = require(`fs`)
 const inquirer = require(`inquirer`);
 const generatePage = require('./lib/Employee');
 const {writeFile, copyFile } = require('./utils/generate-site');
@@ -18,13 +18,9 @@ return inquirer.prompt ([
             }
         }
     },
+  
     {
-        type:`input`,
-        name: `occpuation`,
-        message:`What is your occupation?`
-    },
-    {
-        type:`checkbox`,
+        type:`list`,
         name: `title`,
         message:`What is your title?`,
         choices: [ `Engineer`, `Intern`, `Finish Building my team`]
