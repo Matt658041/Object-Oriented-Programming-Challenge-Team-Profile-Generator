@@ -27,7 +27,7 @@ return inquirer.prompt ([
         type:`checkbox`,
         name: `title`,
         message:`What is your title?`,
-        choices: [ `This`, `That`, `More`]
+        choices: [ `Engineer`, `Intern`, `Finish Building my team`]
     },
     {
         type:`input`,
