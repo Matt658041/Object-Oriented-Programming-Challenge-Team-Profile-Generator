@@ -58,3 +58,5 @@ promptUser()
   .catch(err => {
     console.log(err);
   });
+  
+  init()
