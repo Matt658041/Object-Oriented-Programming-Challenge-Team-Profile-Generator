@@ -1,16 +1,10 @@
-const Employee = require(`../lib/Employee`);
-jest.mock('../lib/Engineer')
-console.log(new Employee());
 
+const Engineer = require(`../lib/Engineer.js`);
 
-test ('Verify Engineername', () => {
-    const engineer =   new Engineer(``) ;
-    if (engineer) {
-        
-    }
-    expect(player.name).toBe(``)
-    expect(employeeName).toHaveProperty(`name`);
-    expect(employeeName).toHaveProperty(`employeeId`);
-    expect(employeeName).toHaveProperty(`email`);
-    expect(employeeName).toHaveProperty(`officeNumber`);
-});
+test('Creates new Engineer', () => {
+const testValue = "bob";
+const employee = new Engineer(`bob`, 1, `bob@bob.com`, testValue );
+expect(employee.employeeId).toBe(testValue);
+    
+  })
+  

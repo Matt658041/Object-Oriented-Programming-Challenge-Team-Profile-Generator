@@ -1,7 +1,7 @@
-const fs = require(`fs`)
+
 const inquirer = require(`inquirer`);
 const generatePage = require('./utils/generate-site');
-const {writeFile, copyFile } = require('./utils/generate-site');
+const writeFile = require (`./src/page-template`);
 const promptUser =() => {
 
 return inquirer.prompt ([
