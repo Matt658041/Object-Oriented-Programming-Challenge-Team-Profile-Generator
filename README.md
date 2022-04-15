@@ -1,5 +1,5 @@
 
-<h1 align='center'>My Object-Oriented-Programming-Challenge-Team-Profile-Generator <h1/> 
+# Object-Oriented-Programming-Challenge-Team-Profile-Generator 
 
   ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
   
