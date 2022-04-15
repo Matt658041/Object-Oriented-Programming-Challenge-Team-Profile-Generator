@@ -1,7 +1,11 @@
-
+const fs = require('fs');
 const inquirer = require(`inquirer`);
 const generatePage = require('./utils/generate-site');
 const writeFile = require (`./src/page-template`);
+const Engineer = require (`./lib/Engineer`);
+const Intern = require (`./lib/Intern`);
+const Employee = require (`./lib/Employee`);
+const Manager = require (`./lib/Manager`)
 const promptUser =() => {
 
 return inquirer.prompt ([
