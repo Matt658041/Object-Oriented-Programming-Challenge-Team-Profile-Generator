@@ -22,27 +22,82 @@ return inquirer.prompt ([
             }
         }
     },
-  
-    {
-        type:`list`,
-        name: `title`,
-        message:`What is your title?`,
-        choices: [ `Engineer`, `Intern`, `Finish Building my team`]
-    },
-    {
-        type:`input`,
-        name: `name`,
-        message:`Provide some information about yourself?`,
-        when: ({confirmAbout}) =>  {
-            if (confirmAbout) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
+    const managerObject = [
+
+      {
+          type: 'input',
+          name: 'name',
+          message: "What is your name?"
+      },
+      {
+          type: `input`,
+          name: 'id',
+          message: "Please enter your Id?"
+      },
+      {
+          type: 'input',
+          name: 'email',
+          message: "Please enter your email?"
+      },
+      {
+          type: 'input',
+          name: 'github',
+          message: "Please enter your gitHub username?"
+      }
     
+    ]
+    
+
+const internObject = [
+
+  {
+      type: 'input',
+      name: 'name',
+      message: "What is your name?"
+  },
+  {
+      type: `input`,
+      name: 'id',
+      message: "Please enter your Id?"
+  },
+  {
+      type: 'input',
+      name: 'email',
+      message: "Please enter your email?"
+  },
+  {
+      type: 'input',
+      name: 'github',
+      message: "Please enter your current School?"
+  }
+
+]
+const engineerObject = [
+
+  {
+      type: 'input',
+      name: 'name',
+      message: "What is your name?"
+  },
+  {
+      type: `input`,
+      name: 'id',
+      message: "Please enter your Id?"
+  },
+  {
+      type: 'input',
+      name: 'email',
+      message: "Please enter your email?"
+  },
+  {
+      type: 'input',
+      name: 'github',
+      message: "Please enter your gitHub username?"
+  }
+
 ]);
+
+
 };
 promptUser()
   .then(promptProject)
